@@ -2,9 +2,17 @@ import React from "react";
 import { useState } from "react";
 import Modal from "./Modal";
 import Overlay from "./Overlay";
+import TodoItem from "./TodoItem";
+import TodoList from "./TodoList";
 
 const TodoCategory = ({ category }) => {
   const [modalIsOpen, setmodalIsOpen] = useState(false);
+
+  const [todos, setTodos] = useState([]);
+
+  const addToDo = (todo) => {
+    setTodos(todo, ...todos);
+  };
 
   const openModal = () => {
     setmodalIsOpen(true);
@@ -22,9 +30,13 @@ const TodoCategory = ({ category }) => {
           New Task
         </button>
       </div>
-      {modalIsOpen ? <Modal category={category}/> : null}
+      {modalIsOpen ? (
+        <Modal category={category} addToDo={addToDo} onSubmit={closeModal} />
+      ) : null}
+      
       {/* makes it so that when you click on the overlay it closes the modal */}
       {modalIsOpen ? <Overlay onClick={closeModal} /> : null}
+      <TodoList category={category} />
     </div>
   );
 };

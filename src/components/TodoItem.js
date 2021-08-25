@@ -1,17 +1,20 @@
 import React from "react";
+import Modal from "./Modal";
 
-const TodoItem = (props) => {
+const TodoItem = ({title, description, category}) => {
   const deleteHander = () => {
-    console.log('delete')
-  }
+    console.log("delete");
+  };
 
   return (
     <div className="card">
-      <h2>{props.title}</h2>
-      <p>{props.description}</p>
+      <h2>{title}</h2>
+      <p>{description}</p>
 
       <div className="actions">
-        <button class="delete-btn" onClick={deleteHander}>Delete</button>
+        <button className="delete-btn" onClick={deleteHander}>
+          Delete
+        </button>
       </div>
     </div>
   );

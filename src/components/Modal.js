@@ -3,10 +3,9 @@ import { useState } from "react";
 import TodoItem from "./TodoItem";
 import TodoList from "./TodoList";
 
-const Modal = (props) => {
-
-  //created a state object
-  const [values, setValues] = useState({
+const Modal = ({ category, closeModal, addToDo }) => {
+  //created a state object (i think this is right)
+  const [todo, setTodo] = useState({
     title: "",
     description: "",
   });
@@ -15,22 +14,24 @@ const Modal = (props) => {
 
   // handle change for title input
   const handleTitle = (event) => {
-    setValues({ ...values, title: event.target.value });
+    setTodo({ ...todo, title: event.target.value });
   };
 
   // handle change for description input
   const handleDescription = (event) => {
-    setValues({ ...values, description: event.target.value });
+    setTodo({ ...todo, description: event.target.value });
   };
 
   // handle submit of the form
   const handleSubmit = (event) => {
     event.preventDefault();
-    // alert(props.category);
+    //addToDo({...todo})
+    //setSubmitted(true);
+
+    //reset todo input
+    //setTodo({...todo, title: "", description: ""});
     
   };
-
-  const pass = () => {};
 
   return (
     <div className="modal">
@@ -41,20 +42,20 @@ const Modal = (props) => {
         <input
           type="text"
           name="title"
-          value={values.title}
+          value={todo.title}
           onChange={handleTitle}
         />
-        {submitted && !values.title ? <span>Please enter title</span> : null}
+        {submitted && !todo.title ? <span>Please enter title</span> : null}
 
         <label htmlFor="desc">Description</label>
 
         <input
           type="text"
           name="description"
-          value={values.description}
+          value={todo.description}
           onChange={handleDescription}
         />
-        {submitted && !values.description ? (
+        {submitted && !todo.description ? (
           <span>Please enter description</span>
         ) : null}
 
@@ -63,6 +64,7 @@ const Modal = (props) => {
         </button>
       </form>
     </div>
+    
   );
 };
 
