@@ -1,6 +1,5 @@
 import React from "react";
-import TodoCategory from "./TodoCategory";
-import TodoItem from "./TodoItem";
+import TodoList from "./TodoList";
 
 const TodoSection = () => {
   return (
@@ -10,12 +9,18 @@ const TodoSection = () => {
         Click “new task” to add a task to the specified list
       </h3>
 
-      {/* maybe just make a bunch of todo Items? */}
       <div className="container">
         <div className="category">
-          <TodoCategory category="To Do"/>
+          <TodoList category="To Do" />
         </div>
-        
+
+        <div className="category">
+          <TodoList category="In Progress" />
+        </div>
+
+        <div className="category">
+          <TodoList category="Completed" />
+        </div>
       </div>
     </div>
   );

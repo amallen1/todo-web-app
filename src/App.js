@@ -60,8 +60,8 @@ function App() {
   };
   return (
     <div className="app">
-      {/* <DashboardPanel />
-      <TodoSection /> */}
+      <DashboardPanel />
+      <TodoSection />
 
       <form onSubmit={handleSubmit}>
         <input

@@ -1,36 +1,28 @@
 import React from "react";
 import { useState } from "react";
-import TodoItem from "./TodoItem";
-import TodoList from "./TodoList";
 
-const Modal = ({ category, closeModal, addToDo }) => {
-  //created a state object (i think this is right)
-  const [todo, setTodo] = useState({
-    title: "",
-    description: "",
-  });
+const Modal = ({ addToList }) => {
+  //created a state object for the todo
+  const [todo, setTodo] = useState("");
 
-  const [submitted, setSubmitted] = useState(false);
+  // const [todos, setTodos] = useState([]);
 
-  // handle change for title input
-  const handleTitle = (event) => {
-    setTodo({ ...todo, title: event.target.value });
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  // handle change for description input
-  const handleDescription = (event) => {
-    setTodo({ ...todo, description: event.target.value });
-  };
+    const newTodo = {
+      id: new Date().getTime(),
+      text: todo,
+      completed: false,
+    };
 
-  // handle submit of the form
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    //addToDo({...todo})
-    //setSubmitted(true);
+    //SAVE THE TODOS
+    //setTodos([...todos].concat(newTodo));
 
-    //reset todo input
-    //setTodo({...todo, title: "", description: ""});
-    
+    addToList(newTodo);
+
+    //reset input
+    setTodo("");
   };
 
   return (
@@ -42,29 +34,15 @@ const Modal = ({ category, closeModal, addToDo }) => {
         <input
           type="text"
           name="title"
-          value={todo.title}
-          onChange={handleTitle}
+          onChange={(e) => setTodo(e.target.value)}
+          value={todo}
         />
-        {submitted && !todo.title ? <span>Please enter title</span> : null}
-
-        <label htmlFor="desc">Description</label>
-
-        <input
-          type="text"
-          name="description"
-          value={todo.description}
-          onChange={handleDescription}
-        />
-        {submitted && !todo.description ? (
-          <span>Please enter description</span>
-        ) : null}
 
         <button className="add-btn" type="submit">
           Add
         </button>
       </form>
     </div>
-    
   );
 };
 
