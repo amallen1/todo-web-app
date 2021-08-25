@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.app {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+// DASHBOARD PANEL
+
+.dashboard-panel {
+  background-color: #29366c;
+  padding: 2em;
+  color: #fff;
+
+  .logo {
+    margin-bottom: 0.5em;
+  }
+
+  .nav-list {
+    list-style-type: none;
+
+    li {
+      margin-bottom: 1em;
+      cursor: pointer;
+      font-weight: 700;
+    }
+  }
+}
+
+//LIST OF TO DO ITEMS
+
+.todo-section {
+  background-color: #ededed;
+  padding: 2em;
+
+  .instructions {
+    margin: 1em 0;
+    color: #29366c;
+  }
+
+  .todo-category {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+
+    .category-name {
+      font-size: 1.5rem;
+    }
+
+    .task-btn {
+      padding: 0.5em;
+      background-color: #fff;
+      border-radius: 8px;
+      border: 1px solid #707070;
+      cursor: pointer;
+    }
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+//To do Item
+.card {
+  margin-top: 1em;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1.5em;
+  width: 95%;
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .delete-btn {
+    background-color: rgb(119, 43, 43);
+    padding: 1em;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+//MODAL SHIT
+.modal {
+  padding: 1em;
+  background-color: #fff;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  z-index: 10;
+  width: 500px;
+  border-radius: 20px;
+
+  form {
+    display: grid;
+    padding: 0 1.5em;
+
+    .heading {
+      text-align: center;
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    label {
+      margin-bottom: 0.25em;
+    }
+
+    input {
+      margin-bottom: 1em;
+      padding: 1em;
+    }
+
+    .add-btn {
+      cursor: pointer;
+      width: 40%;
+      margin: 0 auto;
+      font-size: 1em;
+      padding: 0.5em;
+      border-radius: 10px;
+      border: 1px solid #cecece;
+    }
+
+    span {
+      color: red;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.overlay {
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+

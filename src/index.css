@@ -1,13 +1,161 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Helvetica Neue", sans-serif;
 }
+
+.app {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+}
+
+.dashboard-panel {
+  background-color: #29366c;
+  padding: 2em;
+  color: #fff;
+}
+
+.dashboard-panel .logo {
+  margin-bottom: 0.5em;
+}
+
+.dashboard-panel .nav-list {
+  list-style-type: none;
+}
+
+.dashboard-panel .nav-list li {
+  margin-bottom: 1em;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.todo-section {
+  background-color: #ededed;
+  padding: 2em;
+}
+
+.todo-section .instructions {
+  margin: 1em 0;
+  color: #29366c;
+}
+
+.todo-section .todo-category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 95%;
+}
+
+.todo-section .todo-category .category-name {
+  font-size: 1.5rem;
+}
+
+.todo-section .todo-category .task-btn {
+  padding: 0.5em;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #707070;
+  cursor: pointer;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  margin-top: 1em;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1.5em;
+  width: 95%;
+}
+
+.card .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.card .delete-btn {
+  background-color: #772b2b;
+  padding: 1em;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal {
+  padding: 1em;
+  background-color: #fff;
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  z-index: 10;
+  width: 500px;
+  border-radius: 20px;
+}
+
+.modal form {
+  display: -ms-grid;
+  display: grid;
+  padding: 0 1.5em;
+}
+
+.modal form .heading {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.modal form label {
+  margin-bottom: 0.25em;
+}
+
+.modal form input {
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.modal form .add-btn {
+  cursor: pointer;
+  width: 40%;
+  margin: 0 auto;
+  font-size: 1em;
+  padding: 0.5em;
+  border-radius: 10px;
+  border: 1px solid #cecece;
+}
+
+.modal form span {
+  color: red;
+  margin-bottom: 1em;
+}
+
+.overlay {
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+/*# sourceMappingURL=index.css.map */
