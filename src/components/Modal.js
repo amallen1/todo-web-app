@@ -5,8 +5,6 @@ const Modal = ({ addToList }) => {
   //created a state object for the todo
   const [todo, setTodo] = useState("");
 
-  // const [todos, setTodos] = useState([]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -15,9 +13,6 @@ const Modal = ({ addToList }) => {
       text: todo,
       completed: false,
     };
-
-    //SAVE THE TODOS
-    //setTodos([...todos].concat(newTodo));
 
     addToList(newTodo);
 

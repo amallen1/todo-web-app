@@ -8,7 +8,7 @@ const DashboardPanel = () => {
       <nav className="navigation">
         <ul className="nav-list">
           <li>Dashboard</li>
-          <li>To do</li>
+          <li>To Do</li>
           <li>In Progress</li>
           <li>Completed</li>
         </ul>

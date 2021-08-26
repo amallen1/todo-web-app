@@ -10,17 +10,9 @@ const TodoSection = () => {
       </h3>
 
       <div className="container">
-        <div className="category">
-          <TodoList category="To Do" />
-        </div>
-
-        <div className="category">
-          <TodoList category="In Progress" />
-        </div>
-
-        <div className="category">
-          <TodoList category="Completed" />
-        </div>
+        <TodoList category="To Do" />
+        <TodoList category="In Progress" />
+        <TodoList category="Completed" />
       </div>
     </div>
   );

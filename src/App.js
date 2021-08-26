@@ -63,15 +63,16 @@ function App() {
       <DashboardPanel />
       <TodoSection />
 
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <input
           type="text"
           onChange={(e) => setTodo(e.target.value)}
           value={todo}
         />
         <button type="submit">Add todo</button>
-      </form>
-      {todos.map((todo) => (
+      </form> */}
+
+      {/* {todos.map((todo) => (
         <div key={todo.id}>
           {toDoEditing === todo.id ? (
             <input
@@ -97,7 +98,7 @@ function App() {
             <button onClick={() => setToDoEditing(todo.id)}>Edit Todo</button>
           )}
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
