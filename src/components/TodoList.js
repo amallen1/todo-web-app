@@ -5,26 +5,22 @@ import Overlay from "./Overlay";
 import TodoItem from "./TodoItem";
 
 const TodoList = ({ category }) => {
-  const [modalIsOpen, setmodalIsOpen] = useState(false); //state for the modal
+  const [modalIsOpen, setmodalIsOpen] = useState(false);
 
   const toggle = () => {
     setmodalIsOpen(!modalIsOpen);
   };
 
-  const [todos, setTodos] = useState([]); //state for the task list
+  const [todos, setTodos] = useState([]);
 
-  //Delete tasks
   const deleteTask = (id) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
   };
 
-  //review code
   const addTask = (taskObj) => {
-    // let tempList = todos;
-    // tempList.push(taskObj);
     setTodos([...todos].concat(taskObj));
-    toggle(); //closes the modal
+    toggle();
   };
 
   const todoItems = todos.map((todo) => (

@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 
 const Modal = ({ addToList }) => {
-  //created a state object for the todo
   const [todo, setTodo] = useState("");
 
   const handleSubmit = (e) => {
@@ -16,7 +15,6 @@ const Modal = ({ addToList }) => {
 
     addToList(newTodo);
 
-    //reset input
     setTodo("");
   };
 
