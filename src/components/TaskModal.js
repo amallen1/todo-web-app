@@ -1,16 +1,19 @@
 import React from "react";
-import { useState } from "react";
+import { useState} from "react";
+// import { db } from "../config";
+// import { collection, doc, addDoc, setDoc } from "firebase/firestore";
 
-const Modal = ({ addToList }) => {
+const Modal = ({ addToList, category }) => {
   const [todo, setTodo] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newTodo = {
       id: new Date().getTime(),
       text: todo,
       completed: false,
+      category: category,
     };
 
     addToList(newTodo);

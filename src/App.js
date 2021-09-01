@@ -59,8 +59,8 @@ function App() {
     setEditingText("");
   };
   return (
-    <div className="app">
-      <DashboardPanel />
+    <div className="desktop-container">
+      {/* <DashboardPanel /> */}
       <TodoSection />
 
       {/* <form onSubmit={handleSubmit}>

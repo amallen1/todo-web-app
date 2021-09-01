@@ -1,8 +1,26 @@
+/* Box sizing rules */
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 body {
@@ -12,10 +30,8 @@ body {
 
 .app {
   height: 100vh;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr;
 }
 
 .dashboard-panel {
@@ -23,15 +39,12 @@ body {
   padding: 2em;
   color: #fff;
 }
-
 .dashboard-panel .logo {
   margin-bottom: 0.5em;
 }
-
 .dashboard-panel .nav-list {
   list-style-type: none;
 }
-
 .dashboard-panel .nav-list li {
   margin-bottom: 1em;
   cursor: pointer;
@@ -39,29 +52,22 @@ body {
 }
 
 .todo-section {
+  height: 100vh;
   background-color: #ededed;
   padding: 2em;
 }
-
 .todo-section .instructions {
   margin: 1em 0;
   color: #29366c;
 }
-
 .todo-section .todo-category {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   width: 95%;
 }
-
 .todo-section .todo-category .category-name {
   font-size: 1.5rem;
 }
-
 .todo-section .todo-category .task-btn {
   padding: 0.5em;
   background-color: #fff;
@@ -71,10 +77,8 @@ body {
 }
 
 .container {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card {
@@ -84,19 +88,12 @@ body {
   padding: 1em;
   width: 95%;
   text-align: left;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
-
 .card .actions {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
-
 .card .delete-btn {
   background-color: #772b2b;
   padding: 1em;
@@ -104,6 +101,11 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+img {
+  cursor: pointer;
+  margin-right: 0.25em;
 }
 
 .modal {
@@ -116,28 +118,22 @@ body {
   width: 500px;
   border-radius: 20px;
 }
-
 .modal form {
-  display: -ms-grid;
   display: grid;
   padding: 0 1.5em;
 }
-
 .modal form .heading {
   text-align: center;
   font-size: 1.5em;
   margin-bottom: 0.5em;
 }
-
 .modal form label {
   margin-bottom: 0.25em;
 }
-
 .modal form input {
   margin-bottom: 1em;
   padding: 1em;
 }
-
 .modal form .add-btn {
   cursor: pointer;
   width: 40%;
@@ -147,7 +143,6 @@ body {
   border-radius: 10px;
   border: 1px solid #cecece;
 }
-
 .modal form span {
   color: red;
   margin-bottom: 1em;
@@ -162,4 +157,3 @@ body {
   left: 0;
   width: 100%;
 }
-/*# sourceMappingURL=index.css.map */

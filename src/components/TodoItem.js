@@ -1,4 +1,6 @@
 import React from "react";
+import trash from "../images/trash.svg";
+import edit from "../images/edit.svg";
 
 const TodoItem = ({ title, deleteTask, id }) => {
   return (
@@ -6,7 +8,14 @@ const TodoItem = ({ title, deleteTask, id }) => {
       <p>{title}</p>
 
       <div className="actions">
-        <button className="delete-btn" onClick={()=> deleteTask(id)}>Delete</button>
+        {/* need to be able to edit also */}
+        <img className="btns" src={edit} alt="edit button" />
+        <img
+          className="btns"
+          src={trash}
+          alt="trash button"
+          onClick={() => deleteTask(id)}
+        />
       </div>
     </div>
   );
